@@ -3082,21 +3082,7 @@ void ColoredPrintf(GTestColor color, const char* fmt, ...) {
 static const char kTypeParamLabel[] = "TypeParam";
 static const char kValueParamLabel[] = "GetParam()";
 
-static void PrintFullTestCommentIfPresent(const TestInfo& test_info) {
-  const char* const type_param = test_info.type_param();
-  const char* const value_param = test_info.value_param();
-
-  if (type_param != nullptr || value_param != nullptr) {
-    printf(", where ");
-    if (type_param != nullptr) {
-      printf("%s = %s", kTypeParamLabel, type_param);
-      if (value_param != nullptr) printf(" and ");
-    }
-    if (value_param != nullptr) {
-      printf("%s = %s", kValueParamLabel, value_param);
-    }
-  }
-}
+static void PrintFullTestCommentIfPresent(const TestInfo& test_info) {}
 
 // This class implements the TestEventListener interface.
 //
